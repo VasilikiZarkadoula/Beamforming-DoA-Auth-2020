@@ -2,10 +2,10 @@ function theta_array_total = createThetaArrayTotal(theta,delta)
 % This function is used for Null-Steering Beamformer (NSB)
 
 % Inputs:
-% theta,delta -> angles in deg
+% theta (Î¸),delta (Î´) -> angles in deg
 % Output:
 % theta_array_total -> 3d 5X5Xi array consisting of angle values 
-% (è,è+ä,è+2ä,è+3ä,è+4ä)  in deg
+% (Î¸,Î¸+Î´,Î¸+2Î´,Î¸+3Î´,Î¸+4Î´)  in deg
 
 theta_array_total = [];
 for i = 0:inf
