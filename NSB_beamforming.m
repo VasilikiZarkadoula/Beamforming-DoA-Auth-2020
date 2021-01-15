@@ -2,7 +2,7 @@ function [Wnsb,SINR,dth0,dth1,dth2,dth3,dth4] = NSB_beamforming(theta_array,snr,
 % This function is used for Null-Steering Beamformer (NSB)
 
 % INPUTS:
-% theta_array -> (1XN) vector consisting of angles in rad [è0,è1,è2,è3,è4]
+% theta_array -> (1XN) vector consisting of angles in rad [Î¸0,Î¸1,Î¸2,Î¸3,Î¸4]
 % snr -> value in dB
 % M -> number of elements of antenna
 % N -> number of arrival signals
@@ -62,7 +62,7 @@ normalized_AF = abs(AF)./norm(AF);
 plot(rad2deg(theta),normalized_AF);
 
 % main lobe divergence
-% find theta value of max peak in 2d radiation pattern and compare with è0
+% find theta value of max peak in 2d radiation pattern and compare with Î¸0
 [peaks,locs_pk] = findpeaks(normalized_AF,rad2deg(theta));
 max_peak = max(peaks);
 position = find(peaks == max_peak);
@@ -71,7 +71,7 @@ dth0 = abs(max_lobe-rad2deg(theta_array(1)));
 
 % null divergences
 % find theta values of min peaks in 2d radiation pattern and compare with
-% è1,è2,è3,è4
+% Î¸1,Î¸2,Î¸3,Î¸4
 [~,loc_min] = findpeaks(-normalized_AF,rad2deg(theta));
 dist1 = abs(loc_min - rad2deg(theta_array(2)));
 dist2 = abs(loc_min - rad2deg(theta_array(3)));
