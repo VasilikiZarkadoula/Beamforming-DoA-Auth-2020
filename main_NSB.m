@@ -9,9 +9,9 @@ close all;
 M = 16;     % number of elements of antenna
 N = 5;      % number of arrival signals
 
-theta = 30; % (Î¸)
+theta = 30; % (è)
 
-% choose from different delta(Î´) and snr 
+% choose from different delta(ä) and snr 
 delta = 2;
 %delta = 4;
 %delta = 6;
@@ -30,20 +30,20 @@ snr = 0;
 
 %i,ii)
 
-% 5X5 array consisting of angle values (30,30+Î´,30+2Î´,30+3Î´,30+4Î´) in deg 
+% 5X5 array consisting of angle values (30,30+ä,30+2ä,30+3ä,30+4ä) in deg 
 thetaArray = createThetaArray(theta,delta);
 thetaArrayFirst = thetaArray(1,:);
 
 %iii,iv)
 
-% 5X5 array consisting of angle values (31,31+Î´,31+2Î´,31+3Î´,31+4Î´) in deg 
+% 5X5 array consisting of angle values (31,31+ä,31+2ä,31+3ä,31+4ä) in deg 
 thetaArray2 = createThetaArray(theta+1,delta);
 thetaArray2First = thetaArray2(1,:);
 
 %v)
 
-% 3d array consisting of angle values (Î¸,Î¸+Î´,Î¸+2Î´,Î¸+3Î´,Î¸+4Î´) from Î¸=30 
-% to Î¸+4*Î´=150
+% 3d array consisting of angle values (è,è+ä,è+2ä,è+3ä,è+4ä) from è=30 
+% to è+4*ä=150
 thetaArrayTotal = createThetaArrayTotal(theta,delta);
 % deg to rad
 thetaArrayTotal = deg2rad(thetaArrayTotal);
@@ -66,7 +66,7 @@ dth2 = zeros(1,n);
 dth3 = zeros(1,n);
 dth4 = zeros(1,n);
 
-% for every vector (Î¸,Î¸+Î´,Î¸+2Î´,Î¸+3Î´,Î¸+4Î´) return NSB weights, SINR, main 
+% for every vector (è,è+ä,è+2ä,è+3ä,è+4ä) return NSB weights, SINR, main 
 % lobe divergences (dth0) and null divergences (dth1,dth2,dth3,dth4)
 for i=1:n
     [Wnsb(:,:,i),SINR(i),dth0(i),dth1(i),dth2(i),dth3(i),dth4(i)] = NSB_beamforming(C(i,:),snr,M,N);
@@ -81,7 +81,7 @@ C = rad2deg(C);
 dth = [dth0',dth1',dth2',dth3',dth4'];
 SINR = SINR';
 
-% array of angles (Î¸0,Î¸1,Î¸2,Î¸3,Î¸4), their corresponding divergences
+% array of angles (è0,è1,è2,è3,è4), their corresponding divergences
 % (dth0,dth1,dth2,dth3,dth4) and SINR
 ARRAY = [abs(C),abs(dth),SINR];
 

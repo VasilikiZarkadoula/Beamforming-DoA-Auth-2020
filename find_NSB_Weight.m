@@ -12,9 +12,9 @@ function Wnsb = find_NSB_Weight(array,s,e)
 hermitian = array';     %(NXM)
 Y = hermitian*array;    %(NXN)
 
-% diagonal loading
+%diagonal loading
 I = eye(size(Y));
 Y2 = Y + I*s;           %(NXN)
 
-Y_inv = inv(Y2);        %(NXN)
-Wnsb = array*Y_inv*e;   %(MX1)
+Yinv = inv(Y2);        %(NXN)
+Wnsb = array*Yinv*e;   %(MX1)
