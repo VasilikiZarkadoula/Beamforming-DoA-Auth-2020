@@ -2,9 +2,9 @@ function th = createThetaArray(theta,delta)
 % This function is used for Null-Steering Beamformer (NSB)
 
 % Inputs:
-% theta(è),delta(ä) -> angles in deg
+% theta(Î¸),delta(Î´) -> angles in deg
 % Output:
-% th -> 5X5 array consisting of angle values (è,è+ä,è+2ä,è+3ä,è+4ä) in deg
+% th -> 5X5 array consisting of angle values (Î¸,Î¸+Î´,Î¸+2Î´,Î¸+3Î´,Î¸+4Î´) in deg
 % and in different order
 
 th(1,:) = [theta,theta+delta,theta+2*delta,theta+3*delta,theta+4*delta];
