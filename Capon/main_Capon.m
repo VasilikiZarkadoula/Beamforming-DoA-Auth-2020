@@ -23,9 +23,9 @@ Pcapon = Capon_doA(d,Psignal,snr,M,N,theta);
 normalizedP = 10*log10(Pcapon/max(Pcapon));
 figure;
 plot(theta,normalizedP);
-xlabel('è/degree'); 
+xlabel('Ã¨/degree'); 
 ylabel('10log(Py/Py_m_a_x) (dB)'); 
-title('Capon - ä=10'); 
+title('Capon - Ã¤=10'); 
 grid on;
 
 %b)
@@ -36,9 +36,9 @@ Pcapon1 = Capon_doA(dmin,Psignal,snr,M,N,theta);
 normalizedP1 = 10*log10(Pcapon1/max(Pcapon1));
 figure;
 plot(theta,normalizedP1);
-xlabel('è/degree'); 
+xlabel('Ã¨/degree'); 
 ylabel('10log(Py/Py_m_a_x) (dB)'); 
-title('Capon - ämin'); 
+title('Capon - Ã¤min'); 
 grid on;
 
 
