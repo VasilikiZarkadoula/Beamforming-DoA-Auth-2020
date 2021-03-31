@@ -43,7 +43,7 @@ a = exp(bxr.*x);
 AF = WsmiHerm*a;
 normalizedAF = abs(AF)./norm(AF);
 plot(rad2deg(theta),normalizedAF);
-xlabel('è/degree'); 
+xlabel('Ã¨/degree'); 
 ylabel('normalized AF'); 
 title('SMI Beamformer'); 
 grid on;
